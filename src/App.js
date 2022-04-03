@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
+import Home from './Home';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
 
       <Header />
+      <Home />
     </>
 
   );

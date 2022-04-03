@@ -24,9 +24,10 @@ function Header() {
         <span>& Orders</span>
       </div>
       <div className="nav__options">
-        <small>
-          <FiShoppingCart /> 0
-        </small>
+        <div>
+          <FiShoppingCart />
+          <span className="items__basket">0</span>
+        </div>
         <span>Cart</span>
       </div>
     </div>

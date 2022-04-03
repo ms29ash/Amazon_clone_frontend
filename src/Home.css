@@ -1,0 +1,19 @@
+.home {
+  max-width: 100vw;
+}
+
+.carousel__image {
+  width: 100%;
+
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.2));
+}
+.slider {
+  margin-bottom: -300px;
+  z-index: -5;
+}
+
+.service__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 100vw;
+}
