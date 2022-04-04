@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const MongoURI = 'mongodb+srv://ms29ash:SatoYPkuzsdoBOYZ@amazon.7sw5r.mongodb.net/amazon?retryWrites=true&w=majority'
+const MongoURI = 'mongodb+srv://ms29ash:xpfBt4pDoVZTq3w5@amazon.7sw5r.mongodb.net/amazon?retryWrites=true&w=majority'
 
 const connectToMongo = () => {
 
