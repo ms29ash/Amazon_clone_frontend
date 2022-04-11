@@ -1,0 +1,14 @@
+.carousel__image {
+  width: 100%;
+
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgb(0, 0, 0, 0.2));
+}
+.slider {
+  margin-bottom: -15%;
+  z-index: -5;
+}
+@media and screen and (min-width: 768px) {
+  .slider {
+    margin-bottom: 40%;
+  }
+}

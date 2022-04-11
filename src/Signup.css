@@ -1,0 +1,30 @@
+.already__amazon {
+    text-align: center;
+    font-size: 12px;
+    margin: 8px 0;
+    position: relative;
+    background-color: white;
+    z-index: 10;
+}
+
+.already__amazon::before {
+    content: "";
+    right: 0;
+    left: 0;
+    bottom: 7px;
+    height: 0.8px;
+    background-color: lightgrey;
+    position: absolute;
+    width: 100px;
+    z-index: -1;
+}
+.already__amazon::after {
+    content: "";
+    right: 0;
+    bottom: 7px;
+    height: 0.8px;
+    background-color: lightgrey;
+    position: absolute;
+    width: 100px;
+    z-index: -1;
+}
