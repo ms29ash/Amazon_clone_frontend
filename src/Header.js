@@ -32,7 +32,7 @@ function Header() {
       </NavLink>
 
 
-      <NavLink to='login' className="nav__link nav__options">
+      <NavLink to='login' className="nav__link ">
 
         <small>Returns</small>
         <span>& Orders</span>
@@ -40,9 +40,9 @@ function Header() {
 
 
       <NavLink to='/checkout' className="nav__link nav__options">
-        <div>
+        <div className="basket">
           <FiShoppingCart />
-          <span className="items__basket">{basket.length}</span>
+          <span className="items__basket">{basket?.length}</span>
         </div>
         <span>Cart</span>
       </NavLink>

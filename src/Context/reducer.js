@@ -2,6 +2,15 @@ export const initialState = {
     basket: [],
     user: ""
 }
+export const basketAmount = (basket) => {
+
+    basket?.reduce((amount, item) => {
+
+        return amount + item.price
+    }, 0);
+}
+
+
 
 const reducer = (state, action) => {
     switch (action.type) {

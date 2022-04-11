@@ -41,6 +41,14 @@
   box-sizing: border-box;
 
   padding: 3px 5px;
+  border: 1px solid #131921;
+  border-radius: 3px;
+  transition: all 250ms;
+  font-size: 14px;
+}
+
+.basket {
+  width: 50px;
 }
 
 .items__basket {
@@ -48,12 +56,9 @@
   font-weight: 500;
   font-size: 20px;
   margin: 0 3px;
+  min-width: 100px !important;
 }
 
-.nav__options {
-  border: 1px solid #131921;
-  border-radius: 3px;
-}
-.nav__options:hover {
+.nav__link:hover {
   border: 1px solid white;
 }
