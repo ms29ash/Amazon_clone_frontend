@@ -1,4 +1,7 @@
 .checkout-container {
   display: flex;
   margin: 15px;
+  max-width: 100vw;
+  overflow-x: hidden;
+  align-items: flex-start;
 }
