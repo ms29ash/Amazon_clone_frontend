@@ -6,14 +6,12 @@ import { useProductContext } from './Context/ProductContext'
 function ScrollItem(props) {
     const [{ basket }, dispatch] = useProductContext();
     const { title, thumbnail, price, reviews } = props.item || {};
-    // const name = 'tag8 DOLPHIN Smart Padlock (Silver) with Bluetooth enabled Anti-Theft and Anti- Lost Lock for Luggage, Bags, Locker, Bicycle Unlock via Phone App - TSA Approved - Location Tracking | Switch to Smart Now';
+
     const addToCart = () => {
         dispatch({
             type: 'ADD_TO_CART',
             payload: {
-                item: {
-                    name: title,
-                },
+                item: props.item,
                 quantity: 1
             }
         })
@@ -29,12 +27,12 @@ function ScrollItem(props) {
             <Link to='/' className="name">{title.length > 100 ? `${title.substring(0, 80)}...` : title}</Link>
             <div className="rating">
                 {
-                    Array(Math.ceil(reviews.rating)).fill().map((_, i) => {
+                    Array(Math.floor(reviews.rating)).fill().map((_, i) => {
                         return <p key={i}>&#11088;</p>
                     })
                 }
                 {
-                    Array(5 - Math.ceil(reviews.rating)).fill().map((_, i) => {
+                    Array(5 - Math.floor(reviews.rating)).fill().map((_, i) => {
                         return <p className="outline-star" key={i}>&#9734;</p>
 
                     })

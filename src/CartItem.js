@@ -1,19 +1,27 @@
 import React from 'react'
 import './CartItem.css'
 
-function CartItem() {
+function CartItem(props) {
+    const { title, thumbnail, price, reviews } = props.product?.item || {}
+
     return (
         <>
 
             <div className="cart__item">
-                <img src="https://m.media-amazon.com/images/I/71H9d4Rt3rL._AC_AA180_.jpg" alt="" />
+                <img src={thumbnail} alt="" />
                 <div className="cart__item--details">
 
-                    <p>RawRage DECAPRO Ultimate Size Gain Formula l Helps Gain Mass- Pack of 2</p>
+                    <p>{title?.length > 100 ? `${title.substring(0, 80)}...` : title}</p>
                     <div className="rating">
                         {
-                            Array(5).fill().map((_, i) => {
-                                return <p>&#11088;</p>
+                            Array(Math.floor(reviews.rating)).fill().map((_, i) => {
+                                return <p key={i}>&#11088;</p>
+                            })
+                        }
+                        {
+                            Array(5 - Math.floor(reviews.rating)).fill().map((_, i) => {
+                                return <p className="outline-star" key={i}>&#9734;</p>
+
                             })
                         }
                     </div>
@@ -22,13 +30,13 @@ function CartItem() {
                         <div className="discount__price">
 
                             <small>&#8377;</small>
-                            <span>285</span>
+                            <span>{price.current_price}</span>
                             <small>00</small>
                         </div>
                         <div className="actual__price">
                             <small>
 
-                                <del>&#8377;331.00</del>
+                                <del>&#8377;{price.before_price}.00</del>
                             </small>
                         </div>
                     </div>

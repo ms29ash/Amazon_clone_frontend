@@ -4,12 +4,13 @@
   flex-direction: column;
   width: fit-content;
   text-align: left;
+  width: 100%;
 }
 
 .scrollItem__wrapper > img {
   height: 200px;
   padding: 0 50px;
-  width: 250px;
+  width: 150px;
   object-fit: contain;
 }
 .name {
