@@ -3,10 +3,11 @@ import "./Header.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
-import { ProContext } from './Context/ProductContext'
+import { useProductContext } from './Context/ProductContext'
 
 function Header() {
-  const [{ basket, user }, dispatch] = ProContext();
+
+  const [{ basket, user }, dispatch] = useProductContext();
   return (
     <div className="header">
       <NavLink to="/" className="nav__options header__logo">

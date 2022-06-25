@@ -5,5 +5,5 @@ const ProductContext = createContext();
 
 export default ProductContext;
 
-export const ProContext = () => useContext(ProductContext);
+export const useProductContext = () => useContext(ProductContext);
 

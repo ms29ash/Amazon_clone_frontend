@@ -3,11 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 import axios from './axios.js'
 import { useForm } from "react-hook-form";
-import { ProContext } from './Context/ProductContext'
+import { useProductContext } from './Context/ProductContext'
 
 
 function Login() {
-    const [{ user }, dispatch] = ProContext();
+    const [{ user }, dispatch] = useProductContext();
 
     const navigate = useNavigate();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();

@@ -2,12 +2,12 @@ import React from 'react'
 import './Subtotal.css'
 import CurrencyFormat from 'react-currency-format';
 import { basketAmount } from './Context/reducer'
-import { ProContext } from './Context/ProductContext'
+import { useProductContext } from './Context/ProductContext'
 
 
 
 function Subtotal() {
-    const [{ basket }, dispatch] = ProContext();
+    const [{ basket }, dispatch] = useProductContext();
     return (
         <div className="subtotal__container">
 

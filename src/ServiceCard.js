@@ -10,7 +10,7 @@ function ServiceCard({ title, service }) {
                     service.map((serviceItem) => {
 
                         return (
-                            <div className="wrapper__service">
+                            <div className="wrapper__service" key={serviceItem.image_url}>
                                 <img src={serviceItem.image_url} alt="" />
                                 <p>{serviceItem.name}</p>
                             </div>)

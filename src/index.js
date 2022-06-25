@@ -5,13 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ProductState from './Context/ProductState'
 import reducer, { initialState } from './Context/reducer'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductState initialState={initialState} reducer={reducer} >
+    <QueryClientProvider client={queryClient}>
 
-      <App />
-    </ProductState>
+      <ProductState initialState={initialState} reducer={reducer} >
+
+        <App />
+        <ReactQueryDevtools initialIsOpen={false} />
+
+      </ProductState>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
