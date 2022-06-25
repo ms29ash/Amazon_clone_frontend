@@ -5,7 +5,7 @@ import { useProductContext } from './Context/ProductContext'
 
 function ScrollItem(props) {
     const [{ basket }, dispatch] = useProductContext();
-    const { title, thumbnail, price, } = props.item || {};
+    const { title, thumbnail, price, reviews } = props.item || {};
     // const name = 'tag8 DOLPHIN Smart Padlock (Silver) with Bluetooth enabled Anti-Theft and Anti- Lost Lock for Luggage, Bags, Locker, Bicycle Unlock via Phone App - TSA Approved - Location Tracking | Switch to Smart Now';
     const addToCart = () => {
         dispatch({
@@ -24,13 +24,19 @@ function ScrollItem(props) {
 
         <div className="scrollItem__wrapper">
             {/* <img src="https://m.media-amazon.com/images/I/516NOoe8efL._SS460_.jpg" alt="" /> */}
-            <img src={thumbnail} alt="" />
-            {/* <Link to='/'>{name.length > 100 ? `${name.substring(0, 80)}...` : name}</Link> */}
-            <Link to='/' className="name">{title}</Link>
+            <img className="item__img" src={thumbnail} alt="" />
+
+            <Link to='/' className="name">{title.length > 100 ? `${title.substring(0, 80)}...` : title}</Link>
             <div className="rating">
                 {
-                    Array(5).fill().map((_, i) => {
+                    Array(Math.ceil(reviews.rating)).fill().map((_, i) => {
                         return <p key={i}>&#11088;</p>
+                    })
+                }
+                {
+                    Array(5 - Math.ceil(reviews.rating)).fill().map((_, i) => {
+                        return <p className="outline-star" key={i}>&#9734;</p>
+
                     })
                 }
             </div>

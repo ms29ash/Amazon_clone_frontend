@@ -9,7 +9,7 @@
 .scrollItem__wrapper > img {
   height: 200px;
   padding: 0 50px;
-  width: auto;
+  width: 250px;
   object-fit: contain;
 }
 .name {
@@ -21,6 +21,12 @@
 
 .rating {
   display: flex;
+  align-items: center;
+}
+
+.outline-star {
+  width: 20px;
+  font-size: 26px;
 }
 
 .price {
