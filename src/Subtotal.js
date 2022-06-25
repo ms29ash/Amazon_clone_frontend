@@ -8,6 +8,7 @@ import { useProductContext } from './Context/ProductContext'
 
 function Subtotal() {
     const [{ basket }, dispatch] = useProductContext();
+    const price = basketAmount(basket)
     return (
         <div className="subtotal__container">
 
@@ -15,7 +16,7 @@ function Subtotal() {
                 <div className="subtotal__head">
 
                     Subtotal ({basket?.length} items)
-                    <CurrencyFormat value={1000} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} renderText={(value) => (
+                    <CurrencyFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'₹'} decimalScale={2} renderText={(value) => (
 
                         <strong>{value}</strong>
                     )} />

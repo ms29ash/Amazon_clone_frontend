@@ -6,6 +6,12 @@
     border-bottom: 1px solid #cbcaca;
 }
 
+.cart__item > img {
+    width: 30%;
+    height: 250px;
+    object-fit: contain;
+}
+
 .cart__item--details > p {
     /* text-overflow: ellipsis; */
     /* white-space: nowrap; */
@@ -17,7 +23,7 @@
     -webkit-box-orient: vertical;
 }
 
-.cart__item--details > button {
+.cart__item--details > .button {
     display: block;
     background-color: #f2f2f2;
     border: none;
@@ -33,7 +39,7 @@
     cursor: pointer;
 }
 
-.cart__item--details > button:hover {
+.cart__item--details > .button:hover {
     background-color: #dcd6d6;
     border-color: #dcd6d6;
 }

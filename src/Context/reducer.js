@@ -2,31 +2,43 @@ export const initialState = {
     basket: [],
     user: ""
 }
+
+//to get total payment of basket items
 export const basketAmount = (basket) => {
 
-    basket?.reduce((amount, item) => {
-
-        return amount + item.price
-    }, 0);
+    return basket?.reduce((amount, item) => amount + (item.quantity * item?.item.price.current_price), 0);
 }
 
+//To get total number of products in basket
+export const totalProduct = (basket) => {
+
+    return basket?.reduce((amount, item) => amount + item.quantity, 0);
+}
+
+
+//get index of any product in basket
 const getItemIndex = (state, idToFind) => {
-    const ids = state.basket.map(item => item.item.name);
+    const ids = state.basket.map(product => product.item?._id);
     return ids.indexOf(idToFind);
 }
+
 
 
 
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
-            // const itemIndex = getItemIndex(state, action.item.name);
-            // if (itemIndex && itemIndex < 0) {
-            console.log(action.item?.name)
-            return { ...state, basket: [...state.basket, action.payload] }
-        // } else {
-        //     return state.basket[itemIndex].quantity += action.quantity;
-        // }
+            const itemIndex = getItemIndex(state, action.payload.item._id);
+            if (itemIndex && itemIndex < 0) {
+
+                return { ...state, basket: [...state.basket, action.payload] }
+            } else {
+                //  state.basket[itemIndex].quantity++
+                const newState = { ...state };
+                // const index = newState.findIndex((product) => product?.item._id === action.payload.item._id);
+                newState.basket[itemIndex].quantity++;
+                return newState;
+            }
         // return {
         //     ...state, basket: [...state.basket, action.item]
         // }

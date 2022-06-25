@@ -4,10 +4,14 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import { useProductContext } from './Context/ProductContext'
+import { totalProduct } from "./Context/reducer";
 
 function Header() {
 
   const [{ basket, user }, dispatch] = useProductContext();
+
+  const numbers = totalProduct(basket);
+
   return (
     <div className="header">
       <NavLink to="/" className="nav__options header__logo">
@@ -43,7 +47,7 @@ function Header() {
       <NavLink to='/checkout' className="nav__link nav__options">
         <div className="basket">
           <FiShoppingCart />
-          <span className="items__basket">{basket?.length}</span>
+          <span className="items__basket">{numbers}</span>
         </div>
         <span>Cart</span>
       </NavLink>

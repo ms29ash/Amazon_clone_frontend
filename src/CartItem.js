@@ -39,8 +39,19 @@ function CartItem(props) {
                                 <del>&#8377;{price.before_price}.00</del>
                             </small>
                         </div>
+
                     </div>
-                    <button>Remove from Cart</button>
+
+                    <select name="Qty" className="button">Qty
+
+                        {
+                            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((number) =>
+                                <option value={number} selected={props.product.quantity === number} >{number}</option>
+                            )
+                        }
+
+                    </select>
+
                 </div>
             </div>
         </>

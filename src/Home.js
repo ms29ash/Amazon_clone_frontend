@@ -6,6 +6,10 @@ import ScrollProducts from './ScrollProducts';
 import Footer from './Footer';
 
 function Home() {
+
+
+
+
     return (
         <div className="home">
             <Carousel />
